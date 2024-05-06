@@ -13,7 +13,12 @@
 //     { firstName: 'Karlach', lastName: 'Cliffgate', location: 'Avernus' }
 //   ]);
 //   => ['Gale Dekarios', 'Wyll Ravengard', 'Karlach Cliffgate'];
-function getNames(people) {}
+function getNames(people) {
+  const fullNames = people.map(person => {
+    return '${person.firstName} ${person.lastName}'
+  })
+  return fullNames
+}
 
 // Given an object representing a person, return their full name (first name and last name).
 // You MUST use object destructuring in your solution.
@@ -24,7 +29,11 @@ function getNames(people) {}
 // Ex.:
 //   getName({ firstName: 'Gale', lastName: 'Dekarios', location: 'Waterdeep' });
 //   => 'Gale Dekarios'
-function getNameUsingDestructuring(person) {}
+function getNameUsingDestructuring(person) {
+  const {firstName, lastName} = person
+  const fullNames = getNamesUsingDestructuring(firstName, lastName) 
+  return fullNames
+}
 
 // Given an array of objects representing people, return a new array of the
 // people matching the given location.
@@ -43,7 +52,10 @@ function getNameUsingDestructuring(person) {}
 //     { firstName: 'Wyll', lastName: 'Ravengard', location: "Baldur's Gate" },
 //     { firstName: 'Astarion', lastName: 'Ancunin', location: "Baldur's Gate" }
 //   ];
-function getPeopleByLocation(people, location) {}
+function getPeopleByLocation(people, location) {
+  return people.filter(person => person.location === location)
+}
+
 
 // Translate a phrase to pirate talk.
 //
@@ -72,7 +84,21 @@ const EN_PIRATE_LOOKUP = {
   hello: 'ahoy',
 };
 
-function translateToPirateTalk(phrase) {}
+function translateToPirateTalk(phrase) {
+  const wordsOnPhrase = phrase.split('')
+
+  const translateWords = words.map(word => {
+    if (wordsOnPhrase === EN_PIRATE_LOOKUP){
+      return EN_PIRATE_LOOKUP[wordsOnPhrase]
+
+    } else {
+      return unchanged
+    }
+       
+  })
+  
+   return translateToPirateTalk
+}
 
 // Return the number of occurrences of each word in a string.
 // This function doesn't handle punctuation and is case-sensitive, so you can
@@ -81,7 +107,16 @@ function translateToPirateTalk(phrase) {}
 // Ex.:
 //   wordCount('hello world')
 //   => { hello: 1, world: 1 }
-function wordCount(str) {}
+
+function wordCount(str) {
+  let count = 0
+  for (let i = 0; i < str.length; i++){
+    if(str[i] === str) {
+      count += 1
+    }
+  }
+  return count
+}
 
 // Given an object representing a bug, return true if the given bug is
 // available in the given month.
@@ -103,7 +138,10 @@ function wordCount(str) {}
 //     }
 //   }, 1);
 //   => true
-function isBugAvailable(bug, month) {}
+function isBugAvailable(bug, month) {
+
+
+}
 
 // Given an array of objects representing bugs, return an object that'll be
 // used to build a calendar. The keys of the object should be the months of the
@@ -146,7 +184,12 @@ function isBugAvailable(bug, month) {}
 //     12: [],
 //   }
 
-function buildBugHuntCalendar(bugs) {}
+function buildBugHuntCalendar(bugs) {
+  const calendar = {}
+  for (let i = 0, i < bugs.length; i++){
+    
+  }
+}
 
 export {
   buildBugHuntCalendar,

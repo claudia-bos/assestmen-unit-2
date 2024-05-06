@@ -9,6 +9,16 @@
 // should switch from "Log Out" to "Log In".
 
 /// TODO: replace this with your code
+const loginButton = document.querySelector('#auth') 
+
+loginButton.addEventListener('click', function(){
+    if (loginButton.innerText === 'Log in'){
+        loginButton.innerText = 'Log out'
+    } else {
+        loginButton.innerText = 'Log in'
+    }
+    return loginButton.addEventListener
+})
 
 // Send an alert
 //
@@ -18,6 +28,22 @@
 // text box. Then, they can submit the form to trigger the alert.
 
 /// TODO: replace this with your code
+
+// const alertMessage = document.querySelector('#send-alert')
+// alertMessage.addEventListener('click', function() {
+//   if (alertMessage === 'send alert') {
+//     alertMessage = alert(alertMessage)
+//   } else {
+//       alertMessage = 'you nedd to send an alert!'
+//   }
+//   return alertMessage.addEventListener
+
+// })
+
+
+const alertMessage = document.getElementById('#send-alert')
+alert(alertMessage)
+
 
 // Add an item
 //
@@ -36,6 +62,25 @@
 
 /// TODO: replace this with your code
 
+const buttom = document.querySelector('#item-adder')
+function addItem(){
+    const addItem = document.createElement('li')
+    addItem.innerText = 'Item'
+
+    const currentlist = document.getElementById('list')
+
+    currentlist.appendChild(addItem)
+
+}
+
+buttom.addEventListener('click',addItem) 
+
+
+//I try to write double click but it does not work when i refresh the page
+//so i just leave it as click.
+
+                              //****/
+
 // Change colors
 //
 // Users should be able to change the color of any element with the
@@ -46,6 +91,28 @@
 // Stuff Blue" should make text blue.
 
 /// TODO: replace this with your code
+
+function turnStuffBlue() {
+    const hostElement = document.querySelectorAll('.changes-colors')
+
+    hostElement.forEach((element) => {
+        return element.style.color = 'blue'
+    })
+}
+
+document.getElementById('blue').addEventListener('click', turnStuffBlue)
+
+function turnStuffRed() {
+    const hostElement = document.querySelectorAll('.changes-colors')
+
+    hostElement.forEach((element) => {
+        return element.style.color = 'red'
+    })
+}
+
+document.getElementById('red').addEventListener('click', turnStuffRed)
+
+
 
 // Calculate factorial
 //
@@ -64,6 +131,20 @@
 
 /// TODO: replace this with your code
 
+function calculateFactorial(n) {
+    
+    if(n === 0 || n === 1) {
+        return 1
+    } else {
+        return n * calculateFactorial(n - 1)
+    }
+
+}
+
+document.getElementById('factorial-calculator').addEventListener('click', calculateFactorial)
+
+
+
 // Validate a form
 //
 // This form is used to collect word recommendations from users. However, it
@@ -80,3 +161,8 @@
 // change the color of the text to red..
 
 /// TODO: replace this with your code
+
+function fourCharacters() {
+
+
+}
